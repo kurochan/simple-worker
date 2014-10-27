@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-worker = SimpleWorker.new
+worker = SimpleWorker::Worker.new
 worker.push {puts 'world'}
 puts 'hello'
 # output:
@@ -30,7 +30,7 @@ puts 'hello'
 ```
 
 ```ruby
-worker = SimpleWorker.new
+worker = SimpleWorker::Worker.new
 worker.push Proc.new {puts 'world'}
 puts 'hello'
 # output:
@@ -39,7 +39,7 @@ puts 'hello'
 ```
 
 ```ruby
-worker = SimpleWorker.new(2)
+worker = SimpleWorker::Worker.new(2)
 5.times do |i|
   worker.push do |thread_id|
     sleep 1
